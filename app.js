@@ -37,9 +37,7 @@ function resetRandomizer(){
   let item = selected[0]
   item = item.replace(/\s+/g, "")
   let removeMe = document.getElementById(item).remove()
-  selected.pop()
-  
-  console.log(item)
+  selected.pop() 
 }
 
 function appendRandItem() {
