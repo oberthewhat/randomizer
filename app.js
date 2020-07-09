@@ -47,7 +47,6 @@ function removeSelectedItem(idName, text) {
   let item = document.getElementById(idName).remove();
   let index = list.indexOf(text)
   list.splice(index, 1)
-  console.log(list)
 }
 
 randomBtn.addEventListener("click", function () {
