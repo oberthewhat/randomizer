@@ -5,25 +5,25 @@
 
 //return to list button needs to push back into the ul
 
-var list = []; //array to store list of items
-var selected = [];//stores the randomly selected item
-var addButton = document.getElementById("addButton"); //accesses the element and creates it into a variable 
-var item = document.getElementById("itemAdd");
+var list = [];
+var selected = [];
+var addButton = document.getElementById("addButton");
+var inputField = document.getElementById("itemAdd");
 var listOfItems = document.getElementById("listOfItems");
 let randomItemDisplay = document.getElementById("display");
 let randomBtn = document.getElementById("randomButton");
 
 const newItemCreator = function () {
-  list.push(item.value);
+  list.push(inputField.value);
   const newItem = document.createElement("li");
 
-  let classString = item.value;
+  let classString = inputField.value;
   classString = classString.replace(/\s+/g, "");
 
-  newItem.innerHTML = item.value;
+  newItem.innerHTML = inputField.value;
   newItem.setAttribute("id", classString);
   listOfItems.appendChild(newItem);
-  item.value = "";
+  inputField.value = "";
 };
 
 addButton.addEventListener("click", newItemCreator);
