@@ -35,12 +35,12 @@ const randomNumGenerator = function () {
 
 function appendRandItem() {
   let item = list[randomNumGenerator()]; //pass the random number to get the item index
-  let elem = document.createElement("p"); //gets element of p and stores as elem
-  let selectedItemId = item.replace(/\s+/g, "");
+	let elem = document.createElement("p"); //gets element of p and stores as elem
+  let selectedItemId = item.replace(/\s+/g, "");	
   elem.innerHTML = item; //makes the element display the text of the item
   elem.setAttribute("id", selectedItemId);// sets the id as the item without spaces
-  randomItemDisplay.appendChild(elem);
-  removeSelectedItem(selectedItemId, item);
+  randomItemDisplay.appendChild(elem); 
+  removeSelectedItem(selectedItemClass, item);//function that removes from dom and array
 }
 
 function removeSelectedItem(idName, text) {
