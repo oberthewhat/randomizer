@@ -40,11 +40,13 @@ function appendRandItem() {
   elem.innerHTML = item; //makes the element display the text of the item
   elem.setAttribute("id", selectedItemId);// sets the id as the item without spaces
   randomItemDisplay.appendChild(elem); 
-  removeSelectedItem(selectedItemClass, item);//function that removes from dom and array
+  removeSelectedItem(selectedItemId, item);//function that removes from dom and array
 }
 
 function removeSelectedItem(idName, text) {
   let item = document.getElementById(idName).remove();
+  let index = list.indexOf(text)
+  list.splice(index, 1)
   console.log(list)
 }
 
