@@ -5,9 +5,9 @@
 
 //return to list button needs to push back into the ul
 
-var list = [];
-var selected = [];
-var addButton = document.getElementById("addButton");
+var list = []; //array to store list of items
+var selected = [];//stores the randomly selected item
+var addButton = document.getElementById("addButton"); //accesses the element and creates it into a variable 
 var item = document.getElementById("itemAdd");
 var listOfItems = document.getElementById("listOfItems");
 let randomItemDisplay = document.getElementById("display");
