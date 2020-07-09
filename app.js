@@ -14,30 +14,30 @@ let randomItemDisplay = document.getElementById("display");
 let randomBtn = document.getElementById("randomButton");
 
 const newItemCreator = function () {
-  list.push(inputField.value);
-  const newItem = document.createElement("li");
+  list.push(inputField.value);//pushing from the input area into the list array
+  const newItem = document.createElement("li");//creating new element
 
   let classString = inputField.value;
-  classString = classString.replace(/\s+/g, "");
+  classString = classString.replace(/\s+/g, ""); //turns the value from input field into a string with no spaces to set an id
 
-  newItem.innerHTML = inputField.value;
-  newItem.setAttribute("id", classString);
-  listOfItems.appendChild(newItem);
-  inputField.value = "";
+  newItem.innerHTML = inputField.value; //sets value of list item to the 
+  newItem.setAttribute("id", classString);//set element as id name
+  listOfItems.appendChild(newItem);//item gets added to the list of items div
+  inputField.value = "";//clears out the input field
 };
 
-addButton.addEventListener("click", newItemCreator);
+addButton.addEventListener("click", newItemCreator);//makes the click run the function
 
 const randomNumGenerator = function () {
-  let randomNum = Math.floor(Math.random() * list.length);
+  let randomNum = Math.floor(Math.random() * list.length); //gets a random number based on the length of the list 
   return randomNum;
 };
 
 function appendRandItem() {
-  let item = list[randomNumGenerator()];
-  let elem = document.createElement("p");
-  elem.innerHTML = item;
-  elem.setAttribute("id", item);
+  let item = list[randomNumGenerator()]; //pass the random number to get the item index
+  let elem = document.createElement("p"); //gets element of p and stores as elem
+  elem.innerHTML = item; //makes the element display the text of the item
+  elem.setAttribute("id", item);// sets the id as the item without spaces
   randomItemDisplay.appendChild(elem);
 
   let selectedItemClass = item.replace(/\s+/g, "");
