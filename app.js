@@ -34,7 +34,7 @@ const randomNumGenerator = function () {
 };
 
 function appendRandItem() {
-  let item = list[`${randomNumGenerator()}`];
+  let item = list[randomNumGenerator()];
   let elem = document.createElement("p");
   elem.innerHTML = item;
   elem.setAttribute("id", item);
