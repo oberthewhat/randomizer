@@ -33,8 +33,25 @@ const randomNumGenerator = function () {
   return randomNum;
 };
 
+function resetRandomizer(){
+  let item = selected[0]
+  item = item.replace(/\s+/g, "")
+  let removeMe = document.getElementById(item).remove()
+  selected.pop()
+  
+  console.log(item)
+}
+
 function appendRandItem() {
+  if (selected.length > 0){
+    resetRandomizer()
+  }
+  if (list.length === 0){
+    window.alert('Generate some stuff bro')
+    return false;
+  }
   let item = list[randomNumGenerator()]; //pass the random number to get the item index
+  selected.push(item)
 	let elem = document.createElement("p"); //gets element of p and stores as elem
   let selectedItemId = item.replace(/\s+/g, "");	
   elem.innerHTML = item; //makes the element display the text of the item
